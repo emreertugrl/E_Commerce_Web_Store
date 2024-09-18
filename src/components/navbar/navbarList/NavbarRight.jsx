@@ -9,12 +9,12 @@ import { useNavigate } from "react-router-dom";
 const NavbarRight = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { itemCount } = useSelector((state) => state.carts);
+  const { itemCount, carts } = useSelector((state) => state.carts);
   useEffect(() => {
     dispatch(getCartTotal());
-  }, [dispatch]);
+  }, [dispatch, carts]);
   return (
-    <div className="flex items-center gap-8 max-md:gap-3">
+    <div className="flex items-center gap-5 max-lg:gap-3">
       <div className="flex items-center border p-3 rounded-full bg-gray-200">
         <input
           type="text"

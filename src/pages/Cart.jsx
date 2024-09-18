@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getCartTotal } from "../redux/cartSlice";
 import CartComp from "../components/cart/CartComp";
 
@@ -16,7 +16,17 @@ const Cart = () => {
   return (
     <div>
       {carts.length === 0 ? (
-        <p>Kartınız boş...</p>
+        <div className="flex items-center justify-center min-h-[calc(100vh-150px)]">
+          <div className="flex flex-col gap-5">
+            <span>Sepetinizde Ürün Bulunmamaktadır...</span>
+            <Link
+              to={"/"}
+              className="bg-gray-200 p-2 rounded-full w-fit hover:bg-gray-400"
+            >
+              Ürün Eklemek için Tıklayın
+            </Link>
+          </div>
+        </div>
       ) : (
         carts?.map((cart, i) => <CartComp key={i} cart={cart} />)
       )}{" "}

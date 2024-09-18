@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const DetailComp = ({ productsDetail }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(0);
 
   const decrement = () => {
@@ -13,6 +15,7 @@ const DetailComp = ({ productsDetail }) => {
     if (quantity < productsDetail?.rating?.count) setQuantity(quantity + 1);
   };
   const addBasket = () => {
+    navigate("/cart");
     dispatch(
       addToCart({
         id: productsDetail?.id,

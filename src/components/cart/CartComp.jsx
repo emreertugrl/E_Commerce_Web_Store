@@ -16,7 +16,9 @@ const CartComp = ({ cart }) => {
         {cart?.price} ₺ ({cart?.quantity}){" "}
       </div>
       <div
-        onClick={() => dispatch(removeFromCart(cart?.id))}
+        onClick={() => {
+          dispatch(removeFromCart(cart?.id));
+        }}
         className="bg-red-500 text-white w-[150px] max-md:w-[100px]  cursor-pointer rounded-md h-16 max-md:h-10 flex items-center justify-center"
       >
         Ürünü Sil
