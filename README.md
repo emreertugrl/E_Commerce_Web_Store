@@ -50,7 +50,7 @@ To run the project locally, follow these steps:
 
 ## Visual
 
-<img src="/public/ecommerce.MP4" alt="e_commerce-mp4">
+<img src="/public/ecommerce.gif" alt="e_commerce-gif">
 
 ## Live Demo
 
